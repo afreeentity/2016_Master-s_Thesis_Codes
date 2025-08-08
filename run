@@ -1,0 +1,9 @@
+#!/bin/sh
+#SBATCH --job-name="test"
+#SBATCH -n 1
+#SBATCH --output=bachoutput
+#SBATCH --nodes=1-1
+#SBATCH -p all
+#SBATCH --time=30-00:00:00
+
+/data/home/mehrdad/Project_V7_50/bin/ElecBrainSimu -m network"$i".xml

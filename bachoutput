@@ -1,0 +1,20 @@
+work_dir = /data/home/mehrdad/Project_V7_50
+Doing simulation of =  /data/home/mehrdad/Project_V7_50/network001.xml
+work_dir = /data/home/mehrdad/Project_V7_50
+Doing simulation of =  /data/home/mehrdad/Project_V7_50/network002.xml
+Traceback (most recent call last):
+  File "/data/home/mehrdad/Project_V7_50/bin/ElecBrainSimu", line 154, in <module>
+    sys.exit(main(sys.argv))
+  File "/data/home/mehrdad/Project_V7_50/bin/ElecBrainSimu", line 87, in main
+    CRT = simu.ReadInput(work_dir,ff)
+  File "mnaMaker/src/ReadInp.py", line 8, in ReadInput
+    with open(fl_xml, 'r') as input:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/mehrdad/Project_V7_50/network001.xml'
+Traceback (most recent call last):
+  File "/data/home/mehrdad/Project_V7_50/bin/ElecBrainSimu", line 154, in <module>
+    sys.exit(main(sys.argv))
+  File "/data/home/mehrdad/Project_V7_50/bin/ElecBrainSimu", line 87, in main
+    CRT = simu.ReadInput(work_dir,ff)
+  File "mnaMaker/src/ReadInp.py", line 8, in ReadInput
+    with open(fl_xml, 'r') as input:
+FileNotFoundError: [Errno 2] No such file or directory: '/data/home/mehrdad/Project_V7_50/network002.xml'

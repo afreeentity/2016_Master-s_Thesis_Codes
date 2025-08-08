@@ -1,0 +1,15 @@
+#!/bin/sh
+nrun=2
+
+for i in $(seq -f "%03g" 1 $((nrun)) );
+do
+  mkdir -p temp
+  mkdir -p result
+  #sed -i s/XXX/${i}/g run
+  sbatch run $i > SUBMIT
+  mkdir result-${i}
+  mv result result-${i}
+  mv temp result-${i}
+#  mv network${i}.xml result-${i}
+  mv temp.xml result-${i} 
+done

@@ -1,0 +1,70 @@
+#!/usr/local/bin/gnuplot
+set terminal postscript eps colortext color "Courier, 10"
+set output 'VCM1.eps'
+#set logscale
+set grid
+set tics font ", 15"
+set xlabel 'Time ' font ", 25"
+set ylabel 'Vt-Current' font ", 25"
+set title 'Current vs. Time' font ", 25"
+set key top left 
+set key font "Courier, 10" 
+#set key autotitle
+plot "vcm.txt" u 1:4 with line notitle
+
+
+set output 'VCM2.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Time ' font ", 25"
+set ylabel 'Voltage' font ", 25"
+set title 'Nodes Voltages' font ", 25"
+set key top left 
+plot "vcm.txt" u 1:2 with line title "V(N1)", "vcm.txt" u 1:3 with line title "V(N2)"
+
+
+set output 'VCM3.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Time ' font ", 25"
+set ylabel 'Current' font ", 25"
+set title 'Resistor Current' font ", 25"
+set key top left 
+plot "vcm.txt" u 1:5 with line notitle
+
+set output 'VCM4.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Time ' font ", 25"
+set ylabel '{/Symbol f}' font ", 25" 
+set title 'Memristor-{/Symbol f}' font ", 25"
+set key top left 
+plot "vcm.txt" u 1:6 with line notitle
+
+set output 'VCM5.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Time ' font ", 25"
+set ylabel 'Voltage' font ", 25"
+set title 'Memristor Voltage' font ", 25"
+set key top left 
+plot "vcm.txt" u 1:($3-$2) with line notitle
+
+
+set output 'VCM6.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Voltage ' font ", 25"
+set ylabel '{/Symbol f}' font ", 25"
+set title 'Memristor-{/Symbol f} vs. Voltage' font ", 25"
+set key top left 
+plot "vcm.txt" u ($3-$2):6 with line notitle
+
+set output 'VCM7.eps'
+set grid
+set tics font ", 15"
+set xlabel 'Voltage ' font ", 25"
+set ylabel 'Current' font ", 25"
+set title 'Memristor Voltage vs. Input Current ' font ", 25"
+set key top left 
+plot "vcm.txt" u ($3-$2):4 with line notitle
